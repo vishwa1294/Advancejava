@@ -1,0 +1,1 @@
+SELECT * FROM jdbc.technology_table;
