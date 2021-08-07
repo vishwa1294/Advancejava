@@ -18,7 +18,7 @@ public class UpdateScamDescriptionByName {
 		
 		try {
 			Connection connect = DriverManager.getConnection(url, username, password);
-			String updateSql = "update scam_table set s_description='They wont stop scamming' where s_name='2G Spectrum' ";
+			String updateSql = "update scam_table set s_description='Delhi Police files fresh FIR against Malvinder and Shivinder for Rs 400 crore 'fraud' According to the FIR, Malvinder and Shivinder Singh, the former ' where s_name='2G Spectrum' ";
 			Statement state = connect.createStatement();
 			state.execute(updateSql);
 			System.out.println(connect);
