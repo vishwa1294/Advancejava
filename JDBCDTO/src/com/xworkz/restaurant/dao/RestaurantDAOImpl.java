@@ -19,13 +19,11 @@ public class RestaurantDAOImpl implements RestaurantDAO {
 				JdbcConnection.password)) {
 			tempConnection = connection;
 			connection.setAutoCommit(false);
-			String query = "insert into jdbc.restaurant_table values(6,'" + dto.getName() + "','" + dto.getLocation() + "'," + "'"
-					+ dto.getSpecialFood() + "'," + dto.isBest() + ",'" + dto.getType() + "')";
-			String query1= "insert into jdbc.restaurant_table values(4,'" + dto.getName() + "','" + dto.getLocation() + "'," + "'"
+			String query = "insert into jdbc.restaurant_table values(2,'" + dto.getName() + "','" + dto.getLocation() + "'," + "'"
 					+ dto.getSpecialFood() + "'," + dto.isBest() + ",'" + dto.getType() + "')";
 			Statement statement = connection.createStatement();
 			statement.execute(query);
-			statement.execute(query1);
+			
 			connection.commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
