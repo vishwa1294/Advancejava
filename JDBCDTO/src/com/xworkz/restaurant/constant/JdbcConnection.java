@@ -2,8 +2,8 @@ package com.xworkz.restaurant.constant;
 
 public class JdbcConnection {
 
-	public static final String username = "root";
-	public static final String password = "vcj2330";
-	public static final String url = "jdbc:mysql://localhost:3306/java.jdbc";
+	public static final String USERNAME = "root";
+	public static final String PASSWORD = "root";
+	public static final String URL = "jdbc:mysql://localhost:3306/transformers";
 
 }

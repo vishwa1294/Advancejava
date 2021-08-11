@@ -5,21 +5,30 @@ import java.io.Serializable;
 import com.xworkz.restaurant.constant.RestaurantType;
 
 public class RestaurantDTO implements Serializable {
-	
-	private String id;
+
+	private int id;
 	private String name;
 	private String location;
 	private String specialFood;
 	private boolean best;
 	private RestaurantType type;
-	
+
 	public RestaurantDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public RestaurantDTO( String name, String location, String specialFood, boolean best,
-			RestaurantType type) {
+	public RestaurantDTO(String name, String location, String specialFood, boolean best, RestaurantType type) {
 		super();
+		this.name = name;
+		this.location = location;
+		this.specialFood = specialFood;
+		this.best = best;
+		this.type = type;
+	}
+
+	public RestaurantDTO(int id, String name, String location, String specialFood, boolean best, RestaurantType type) {
+		super();
+		this.id = id;
 		this.name = name;
 		this.location = location;
 		this.specialFood = specialFood;
@@ -38,7 +47,7 @@ public class RestaurantDTO implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (best ? 1231 : 1237);
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((location == null) ? 0 : location.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((specialFood == null) ? 0 : specialFood.hashCode());
@@ -57,10 +66,7 @@ public class RestaurantDTO implements Serializable {
 		RestaurantDTO other = (RestaurantDTO) obj;
 		if (best != other.best)
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		if (location == null) {
 			if (other.location != null)
@@ -82,12 +88,12 @@ public class RestaurantDTO implements Serializable {
 		return true;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setId(int aiId) {
+		this.id = aiId;
 	}
 
 	public String getName() {
@@ -129,6 +135,5 @@ public class RestaurantDTO implements Serializable {
 	public void setType(RestaurantType type) {
 		this.type = type;
 	}
-	
 
 }
