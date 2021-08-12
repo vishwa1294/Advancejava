@@ -57,8 +57,13 @@ public interface RestaurantDAO {
 			return true;
 			
 		}
-		catch(SQLException e) {
+		catch (SQLException e) {
 			e.printStackTrace();
+		   try {
+			connect.rollback();
+			}catch(SQLException e1) {
+				e1.printStackTrace();
+			}
 		}
 		return false;
 	}
