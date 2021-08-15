@@ -113,7 +113,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public int total() {
 		int total = 0;
 		try (Connection connection = DriverManager.getConnection(JDBCconnection.URL, JDBCconnection.USERNAME, JDBCconnection.PASSWORD)) {
-			String query = "SELECT count(c_id) FROM java.jdbc.customer_table";
+			String query = "SELECT count(c_id) FROM jdbc.customer_table";
 			PreparedStatement prepare = connection.prepareStatement(query);
 			prepare.execute();
 			ResultSet result = prepare.executeQuery();
@@ -174,7 +174,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	private CustomerDTO createdValuesFromResultSet(ResultSet result) throws SQLException {
 		int id = result.getInt("c_id");
-		String name = result.getString("c__name");
+		String name = result.getString("c_name");
 		String from = result.getString("c_from");
 		String to = result.getString("c_to");
 		String address = result.getString("c_address");
