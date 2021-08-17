@@ -13,14 +13,11 @@ public class CustomerServiceDAOImpl  implements CustomerServiceDAO {
 
 	private CustomerDAO dao = new CustomerDAOImpl();
 	 
-	boolean nameValid = false;
-	boolean fromValid = false;
-	boolean toValid = false;
-	boolean addressValid = false;
-	boolean marriedValid = false;
-	boolean passportValid = false;
-	boolean educationValid = false;
-
+	boolean nameVAlidate = false;
+	boolean fromVAlidate = false;
+	boolean toVAlidate = false;
+	boolean addressValidate = false;
+	boolean allValidate = false;
 	@Override
 	public int validateAndSave(CustomerDTO dto) {
 		int validation = 0;
