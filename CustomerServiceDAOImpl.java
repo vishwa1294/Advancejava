@@ -44,6 +44,17 @@ public class CustomerServiceDAOImpl  implements CustomerServiceDAO {
 
 	@Override
 	public void validateAndSaveAll(Collection<CustomerDTO> collect) {
+		if (!collection.isEmpty()) {
+			collection.forEach(dto -> {
+				this.validateAndSave(dto);
+			});
+		}
+
+		return false;
+
+	}
+
+}
 		
 	}
 
