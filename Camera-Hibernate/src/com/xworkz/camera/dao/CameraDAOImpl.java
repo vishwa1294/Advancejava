@@ -71,9 +71,9 @@ public class CameraDAOImpl implements CameraDAO {
 	public void deleteList(List<Integer> ids) {
 		try (Session session = sf.openSession()) {
 			Transaction trans = session.beginTransaction();
-			ids.forEach(entity -> {
+			ref.forEach(entity -> {
 				CameraEntity camEntity = session.get(CameraEntity.class, entity);
-				if (ids.contains(entity)) {
+				if (ref.contains(entity)) {
 					session.delete(camEntity);
 					System.out.println(camEntity);
 				}
